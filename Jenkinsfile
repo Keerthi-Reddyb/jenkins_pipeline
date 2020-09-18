@@ -7,8 +7,13 @@ pipeline {
 			    echo 'Building...'
 				sh '''
 					cd /home/ec2-user/workspace/
-					rm -rf central_repo
+					if [ -d central_repo ] ; then
+					cd ./central_repo
+					git pull
+					else
+					
 					git clone https://github.com/Keerthi-Reddyb/central_repo
+					fi
 					cd /home/ec2-user/workspace/central_repo/
 					make
 				'''
