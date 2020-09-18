@@ -5,13 +5,13 @@ pipeline {
 		stage ('STAGE 1') {
 			steps {
 			    echo 'Building...'
-				sh ''''
+				sh '''
 					cd /home/ec2-user/workspace/
 					rm -rf central_repo
 					git clone https://github.com/Keerthi-Reddyb/central_repo
 					cd /home/ec2-user/workspace/central_repo/
 					make
-				''''
+				'''
 			}	
 		}
 		stage ('STAGE 2') {
