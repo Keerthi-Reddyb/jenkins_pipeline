@@ -7,7 +7,7 @@ pipeline {
 			    echo 'Building...'
 				sh '''
 					cd /home/ec2-user/workspace/
-					if [ -d central_repo ] ; then
+					if [ -f central_repo ] ; then
 					cd ./central_repo
 					git pull
 					else
