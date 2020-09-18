@@ -19,11 +19,11 @@ pipeline {
 			    echo 'Building...'
 				sh '''
 				        cd /home/ec2-user/workspace/
-					rm -rf java-project3
-					git clone https://github.com/Keerthi-Reddyb/java-project3
-				        cd /home/ec2-user/workspace/java-project3/webapp/
+					rm -rf java-project3 Test
+					git clone https://github.com/Keerthi-Reddyb/Test
+				        cd /home/ec2-user/workspace/Test/webapp/
 					mvn clean install
-					cd /home/ec2-user/workspace/java-project3/webapp/target
+					cd /home/ec2-user/workspace/Test/webapp/target
 					cp *.war /home/ec2-user/apache-tomcat-9.0.38/webapps
 				'''	
 			}	
