@@ -24,7 +24,7 @@ pipeline {
 				        cd /home/ec2-user/workspace/java-project3/webapp/
 					mvn clean install
 					cd /home/ec2-user/workspace/java-project3/webapp/target
-					cp *.war /home/ec2-user/workspace/java-project/apache-tomcat-9.0.38/webapps
+					cp *.war /home/ec2-user/apache-tomcat-9.0.38/webapps
 				'''	
 			}	
 		}
