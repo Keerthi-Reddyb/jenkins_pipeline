@@ -11,7 +11,7 @@ pipeline {
 					git clone https://github.com/Keerthi-Reddyb/central_repo
 					cd /home/ec2-user/workspace/central_repo/
 					make
-				'''
+				''''
 			}	
 		}
 		stage ('STAGE 2') {
