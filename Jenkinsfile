@@ -6,7 +6,9 @@ pipeline {
 			steps {
 			    echo 'Building...'
 				sh '''
-					cd /home/ec2-user/workspace/c-project-jenkins/
+					cd /home/ec2-user/workspace/
+					git clone https://github.com/Keerthi-Reddyb/central_repo
+					cd /home/ec2-user/workspace/central_repo/
 					make
 				'''
 			}	
@@ -15,6 +17,8 @@ pipeline {
 			steps {
 			    echo 'Building...'
 				sh '''
+				        cd /home/ec2-user/workspace/
+					git clone https://github.com/Keerthi-Reddyb/java-project
 				        cd /home/ec2-user/workspace/java-project/
 					mvn clean install
 					cp *.war /home/ec2-user/apache-tomcat-9.0.38/webapps
