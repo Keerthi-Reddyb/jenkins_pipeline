@@ -1,30 +1,26 @@
 pipeline {
-	agent { label 'changed_slave' }
+	agent { label 'slave1' }
  
 	stages {
 		stage ('STAGE 1') {
 			steps {
-				echo 'This is slaveforc node with STAGE 1'
-				sh 'sleep 10'
+			    echo 'Building...'
+				sh '''
+					cd /home/ec2-user/workspace/c-project-jenkins/
+					make
+				'''
 			}	
 		}
 		stage ('STAGE 2') {
 			steps {
-				echo 'This is slaveforjava with STAGE 2'
-				sh 'sleep 10'
+			    echo 'Building...'
+				sh '''
+				        cd /home/ec2-user/workspace/java-project/
+					mvn clean install
+					cp *.war /home/ec2-user/apache-tomcat-9.0.38/webapps
+				'''	
 			}	
 		}
-		stage ('STAGE 3') {
-			steps {
-				echo 'This is slaveforc with STAGE 3'
-				sh 'sleep 10'
-			}	
-		}
-		stage ('STAGE 4') {
-			steps {
-				echo 'This is master with STAGE 4'
-				sh 'sleep 10'
-			}	
-		}
+		
 	}
 }
