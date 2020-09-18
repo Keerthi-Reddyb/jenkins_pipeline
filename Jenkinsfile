@@ -19,7 +19,7 @@ pipeline {
 			    echo 'Building...'
 				sh '''
 				        cd /home/ec2-user/workspace/
-					rm -rf java-project
+					rm -rf java-project3
 					git clone https://github.com/Keerthi-Reddyb/java-project3
 				        cd /home/ec2-user/workspace/java-project3/webapp/
 					mvn clean install
