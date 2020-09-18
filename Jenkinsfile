@@ -7,6 +7,7 @@ pipeline {
 			    echo 'Building...'
 				sh '''
 					cd /home/ec2-user/workspace/
+					rm -rf central_repo
 					git clone https://github.com/Keerthi-Reddyb/central_repo
 					cd /home/ec2-user/workspace/central_repo/
 					make
@@ -18,6 +19,7 @@ pipeline {
 			    echo 'Building...'
 				sh '''
 				        cd /home/ec2-user/workspace/
+					rm -rf java-project
 					git clone https://github.com/Keerthi-Reddyb/java-project
 				        cd /home/ec2-user/workspace/java-project/
 					mvn clean install
